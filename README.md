@@ -37,7 +37,20 @@ The plugin can be used in three ways:
 
 ## Configuration
 
-The plugin requires a GitHub Personal Access Token with `repo` scope access. You can create one at [GitHub Settings > Developer Settings > Personal Access Tokens](https://github.com/settings/tokens).
+The plugin requires a GitHub Personal Access Token with the following scope:
+
+- `repo` - For reading repository content and metadata
+
+You can create a token by following these steps:
+1. Go to [GitHub Settings > Developer Settings > Personal Access Tokens](https://github.com/settings/tokens)
+2. Click "Generate new token (classic)"
+3. Select the `repo` scope
+4. Generate the token and copy it
+5. Paste the token in the plugin settings
+
+Note: If you only need to analyze public repositories, you can create a Fine-grained token instead, with:
+- Repository access: Public repositories (read-only)
+- Permissions: Repository -> Contents (Read-only)
 
 ## Features
 
