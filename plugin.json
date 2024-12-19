@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "uuid": "typingmind-doc-monitor",
+  "title": "GitHub Documentation Monitor",
+  "iconURL": "",
+  "emoji": "📚",
+  "implementationType": "javascript",
+  "openaiSpec": {
+    "name": "analyze_github_documentation",
+    "description": "Analyzes and monitors GitHub repository documentation, providing quality metrics and suggestions for improvement",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "owner": {
+          "type": "string",
+          "description": "GitHub repository owner"
+        },
+        "repo": {
+          "type": "string",
+          "description": "GitHub repository name"
+        },
+        "action": {
+          "type": "string",
+          "enum": ["analyze", "suggest", "search"],
+          "description": "Action to perform: analyze documentation, suggest improvements, or search docs"
+        },
+        "query": {
+          "type": "string",
+          "description": "Search query when action is 'search'"
+        }
+      },
+      "required": ["owner", "repo", "action"]
+    }
+  },
+  "userSettings": [
+    {
+      "name": "githubToken",
+      "label": "GitHub Token",
+      "type": "password",
+      "required": true,
+      "description": "GitHub Personal Access Token with repo access"
+    }
+  ],
+  "outputOptions": {
+    "type": "markdown",
+    "template": "# Documentation Analysis Results\n\n{{results}}"
+  }
+}
